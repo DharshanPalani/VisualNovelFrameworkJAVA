@@ -8,4 +8,12 @@ public class Character {
         this.name = name;
     }
 
+    public void Say(String dialogue) {
+        System.out.println(name + " : " + dialogue);
+    }
+
+    public String getName() {
+        return name;
+    }
+
 }

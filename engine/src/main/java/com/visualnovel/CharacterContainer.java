@@ -2,6 +2,6 @@ package com.visualnovel;
 
 public class CharacterContainer {
 
-    public static Character Luna = new Character("Luna");
+    public static final Character Luna = new Character("Luna");
 
 }

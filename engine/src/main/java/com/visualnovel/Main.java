@@ -2,10 +2,13 @@ package com.visualnovel;
 
 public class Main {    
     public static void main(String[] args) {
-        Engine.scene("intro", () -> {
-            Engine.say(CharacterContainer.Luna.name, "Just kill yourself already...");
-        });
+        CharacterRegistry characterRegistry = new CharacterRegistry();
 
-        Engine.run("intro");
+        characterRegistry.add(new Character("Luna"));
+        characterRegistry.add(new Character("Shiba"));
+
+        Engine.registerScene("intro", new IntroScene(characterRegistry));
+
+        Engine.runScene("intro");
     }
 }

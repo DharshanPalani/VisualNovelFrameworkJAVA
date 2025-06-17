@@ -4,25 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Engine {
-    private static final Map<String, Runnable> scenes = new HashMap<>();
+    private static final Map<String, Scene> scenes = new HashMap<>();
 
-    public static void scene(String name, Runnable handler) {
-        scenes.put(name, handler);
+    public static void registerScene(String name, Scene scene) {
+        scenes.put(name, scene);
         System.out.println(name + " is registered");
     }
 
-    public static void say(String name, String dialogue) {
-        System.out.println(name + " : " + dialogue);
-    }
-
-    public static void run(String name) {
-        Runnable runnable = scenes.get(name);
-        if(runnable == null) {
+    public static void runScene(String name) {
+        Scene scene = scenes.get(name);
+        if(scene == null) {
             System.out.println("Scene not found of: " + name);
             return;
         }
 
-        runnable.run();
+        scene.Play();
   
     }
 }
