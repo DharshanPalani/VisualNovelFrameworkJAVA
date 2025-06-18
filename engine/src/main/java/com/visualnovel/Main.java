@@ -8,7 +8,9 @@ public class Main {
         characterRegistry.add(new Character("Shiba"));
 
         Engine.registerScene("intro", new IntroScene(characterRegistry));
+        Engine.registerScene("end", new EndScene(characterRegistry));
 
         Engine.runScene("intro");
+        Engine.runScene("end");
     }
 }
